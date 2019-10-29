@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <SearchView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/img_interested"
+        android:layout_width="match_parent"
+        android:layout_height="227dp"
+        android:layout_marginBottom="20px"
+        app:srcCompat="@drawable/dragon_park_2" />
+
+    <TextView
+        android:id="@+id/tv_interested"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="20px"
+        android:text="Giảm 300k giá vé vào khu vui chơi giải trí Dragon Park"
+        android:gravity="start"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+
+
+    <GridView
+        android:layout_width="match_parent"
+        android:layout_height="113dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginHorizontal="5dp"
+        android:numColumns="2"
+        android:id="@+id/gv_place">
+
+    </GridView>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginHorizontal="5dp"
+        android:id="@+id/lv_place">
+
+    </ListView>
+</LinearLayout>
