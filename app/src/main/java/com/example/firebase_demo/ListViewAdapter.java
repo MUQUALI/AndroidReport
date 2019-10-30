@@ -19,6 +19,12 @@ public class ListViewAdapter extends BaseAdapter {
     Context context;
     int layout;
 
+    public ListViewAdapter(ArrayList<Place> list, Context context, int layout) {
+        this.list = list;
+        this.context = context;
+        this.layout = layout;
+    }
+
     @Override
     public int getCount() {
         return list.size();

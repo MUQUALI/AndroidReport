@@ -1,8 +1,9 @@
 package com.example.firebase_demo;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Place {
+public class Place implements Serializable {
     String name;
     String title;
     Date postDate;

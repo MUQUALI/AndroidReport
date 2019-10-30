@@ -18,6 +18,12 @@ public class GridViewAdapter extends BaseAdapter {
     Context context;
     int layout;
 
+    public GridViewAdapter(ArrayList<Place> list, Context context, int layout) {
+        this.list = list;
+        this.context = context;
+        this.layout = layout;
+    }
+
     @Override
     public int getCount() {
         return list.size();

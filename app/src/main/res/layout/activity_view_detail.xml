@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <ImageView
+            android:id="@+id/img_view_detail"
+            android:layout_width="match_parent"
+            android:layout_height="227dp"
+            android:scaleType="centerCrop"
+            android:layout_marginBottom="20px"
+            app:srcCompat="@drawable/dragon_park" />
+
+        <TextView
+            android:id="@+id/tv_title_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="20px"
+            android:text="Giảm 300k giá vé vào khu vui chơi giải trí Dragon Park"
+            android:gravity="start"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="294dp"
+            android:layout_height="27dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="34dp"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/icon_map" />
+
+            <TextView
+                android:layout_width="257dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="6dp"
+                android:text="Địa chỉ"
+                android:textAllCaps="true" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_address_detail"
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="202 Định Công Hạ, Hạ Long, Quảng Ninh" />
+
+        <LinearLayout
+            android:layout_width="299dp"
+            android:layout_height="27dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="34dp"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/icon_clock" />
+
+            <TextView
+                android:layout_width="257dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="6dp"
+                android:text="Ngày đăng"
+                android:gravity="start"
+                android:textAllCaps="true" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_date_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="05/04/2019" />
+
+        <LinearLayout
+            android:layout_width="297dp"
+            android:layout_height="28dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="34dp"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/icon_bus" />
+
+            <TextView
+                android:layout_width="258dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="6dp"
+                android:text="Tuyến xe chạy qua"
+                android:gravity="start"
+                android:textAllCaps="true" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_bus_detail"
+            android:layout_width="296dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="Bus Phúc Xuyên" />
+
+        <LinearLayout
+            android:layout_width="296dp"
+            android:layout_height="28dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="34dp"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/icon_hotel" />
+
+            <TextView
+                android:layout_width="258dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="6dp"
+                android:text="Địa điểm nghỉ ngơi"
+                android:gravity="start"
+                android:textAllCaps="true" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_hotel_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="Khách sạn Mường Thanh, Khách sạn Mạnh Hùng Plaza,  Homestay Đại Lải" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="34dp"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/icon_play" />
+
+            <TextView
+                android:layout_width="258dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="6dp"
+                android:text="Địa điểm giải trí gần đó"
+                android:gravity="start"
+                android:textAllCaps="true" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_more_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="Công viên nước Hạ Long, cầu Bãi Cháy, Bến Do" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="34dp"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/icon_eat" />
+
+            <TextView
+                android:layout_width="258dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="6dp"
+                android:text="Món ngon"
+                android:gravity="start"
+                android:textAllCaps="true" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_food_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="Chả mực, Bún cua, Bún Cá, Mực chiên" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="34dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/icon_description" />
+
+            <TextView
+                android:layout_width="357dp"
+                android:layout_height="28dp"
+                android:layout_marginTop="6dp"
+                android:text="Mô tả"
+                android:textAllCaps="true" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_des_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="15dp"
+            android:text="Trung Quốc đang duy trì liên lạc với Việt Nam về vụ 39 người chết trong container ở Anh, phát ngôn viên Bộ Ngoại giao Trung Quốc cho hay" />
+    </LinearLayout>
+</ScrollView>

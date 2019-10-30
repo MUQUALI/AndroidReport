@@ -11,12 +11,13 @@
         android:id="@+id/img_place_lv"
         app:srcCompat="@drawable/congviennuoc"
         android:layout_width="140dp"
+        android:scaleType="centerCrop"
         android:layout_height="match_parent" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginLeft="5dp"
+        android:layout_height="100dp"
+        android:layout_marginRight="5dp"
         android:weightSum="4"
         android:orientation="vertical">
 
@@ -24,6 +25,7 @@
             android:id="@+id/tv_title"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:layout_marginLeft="15dp"
             android:layout_marginTop="5dp"
             android:text="Công viên nước Hồ Tây giá rẻ vãi cả lồn, nhưng đắt vãi đái"
             android:textStyle="bold"

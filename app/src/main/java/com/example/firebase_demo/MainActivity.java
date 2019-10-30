@@ -4,8 +4,13 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -16,9 +21,10 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
-import java.sql.Array;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -44,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
         init();
         getData();
-
+        tranfersActivity();
     }
 
     void init() {
@@ -52,6 +58,9 @@ public class MainActivity extends AppCompatActivity {
         tvInterested = findViewById(R.id.tv_interested);
         listData = new ArrayList<>();
         gridData = new ArrayList<>();
+
+        lvPlace = findViewById(R.id.lv_place);
+        gvPlace = findViewById(R.id.gv_place);
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
     }
@@ -63,10 +72,13 @@ public class MainActivity extends AppCompatActivity {
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                 Place place = dataSnapshot.getValue(Place.class);
                 listData.add(place);
+                gridData.add(place);
                 if(s != null) {
                     filterData();
                     setData();
+                    configView();
                 }
+                mainImageClick();
 
             }
 
@@ -94,19 +106,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     void filterData() {
-        Collections.reverse(listData);
 
-        if(listData.size() - 2 >= 0) {
-            gridData.add(listData.get(listData.size() - 2));
-        }
-        else {
-            gridData.add(listData.get(0));
-        }
-        if(listData.size() - 3 >= 0) {
-            gridData.add(listData.get(listData.size() - 3));
-        }else {
-            gridData.add(listData.get(0));
-        }
+        Collections.reverse(listData);
     }
 
     void setData() {
@@ -115,6 +116,71 @@ public class MainActivity extends AppCompatActivity {
         tvInterested.setText(place.title);
     }
 
+    void configView() {
+        lvAdapter = new ListViewAdapter(listData, MainActivity.this, R.layout.place_item_layout);
+        lvPlace.setAdapter(lvAdapter);
+
+        gvAdapter = new GridViewAdapter(gridData, MainActivity.this, R.layout.place_grid_layout);
+        gvPlace.setAdapter(gvAdapter);
+    }
+
+    void tranfersActivity() {
+        listViewClick();
+        gridViewClick();
+    }
+
+    void listViewClick() {
+        lvPlace.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(MainActivity.this, ViewDetail.class);
+                Place place = listData.get(i);
+                intent.putExtra("data", place);
+                startActivity(intent);
+            }
+        });
+    }
+
+    void gridViewClick() {
+        gvPlace.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(MainActivity.this, ViewDetail.class);
+                Place place = gridData.get(i);
+                intent.putExtra("data", place);
+                startActivity(intent);
+            }
+        });
+    }
+
+    void mainImageClick() {
+        imgInterested.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, ViewDetail.class);
+                Place place = listData.get(listData.size() - 1);
+                intent.putExtra("data", place);
+                startActivity(intent);
+            }
+        });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.basic_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.add_place:
+                Intent intent = new Intent(MainActivity.this, AddPlace.class);
+                startActivity(intent);
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }
 
 

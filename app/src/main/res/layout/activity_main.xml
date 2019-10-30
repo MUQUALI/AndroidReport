@@ -6,14 +6,13 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
 
-    <SearchView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+
 
     <ImageView
         android:id="@+id/img_interested"
         android:layout_width="match_parent"
         android:layout_height="227dp"
+        android:scaleType="centerCrop"
         android:layout_marginBottom="20px"
         app:srcCompat="@drawable/dragon_park_2" />
 
@@ -33,7 +32,7 @@
 
     <GridView
         android:layout_width="match_parent"
-        android:layout_height="113dp"
+        android:layout_height="150dp"
         android:layout_marginBottom="20dp"
         android:layout_marginHorizontal="5dp"
         android:numColumns="2"
