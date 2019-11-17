@@ -53,7 +53,7 @@
             android:id="@+id/tv_address_detail"
             android:layout_width="match_parent"
             android:layout_height="24dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="20dp"
             android:layout_marginRight="10dp"
             android:text="202 Định Công Hạ, Hạ Long, Quảng Ninh" />
 
@@ -82,7 +82,7 @@
             android:id="@+id/tv_date_detail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="20dp"
             android:layout_marginRight="10dp"
             android:text="05/04/2019" />
 
@@ -112,7 +112,7 @@
             android:id="@+id/tv_bus_detail"
             android:layout_width="296dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="20dp"
             android:layout_marginRight="10dp"
             android:text="Bus Phúc Xuyên" />
 
@@ -142,10 +142,33 @@
             android:id="@+id/tv_hotel_detail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="20dp"
             android:layout_marginRight="10dp"
             android:text="Khách sạn Mường Thanh, Khách sạn Mạnh Hùng Plaza,  Homestay Đại Lải" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginRight="10dp"
+                app:srcCompat="@drawable/tel" />
+
+            <TextView
+                android:id="@+id/tv_phone_detail"
+                android:layout_width="258dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="6dp"
+                android:text="0963252113"
+                android:gravity="start"
+                android:textAllCaps="true" />
+
+        </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -172,7 +195,7 @@
             android:id="@+id/tv_more_detail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="20dp"
             android:layout_marginRight="10dp"
             android:text="Công viên nước Hạ Long, cầu Bãi Cháy, Bến Do" />
 
@@ -202,7 +225,7 @@
             android:id="@+id/tv_food_detail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="20dp"
             android:layout_marginRight="10dp"
             android:text="Chả mực, Bún cua, Bún Cá, Mực chiên" />
 
@@ -217,7 +240,6 @@
                 android:id="@+id/imageView5"
                 android:layout_width="34dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
                 app:srcCompat="@drawable/icon_description" />
 
             <TextView
@@ -225,6 +247,7 @@
                 android:layout_height="28dp"
                 android:layout_marginTop="6dp"
                 android:text="Mô tả"
+                android:gravity="start"
                 android:textAllCaps="true" />
 
         </LinearLayout>
@@ -233,7 +256,7 @@
             android:id="@+id/tv_des_detail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="20dp"
             android:layout_marginRight="10dp"
             android:layout_marginBottom="15dp"
             android:text="Trung Quốc đang duy trì liên lạc với Việt Nam về vụ 39 người chết trong container ở Anh, phát ngôn viên Bộ Ngoại giao Trung Quốc cho hay" />

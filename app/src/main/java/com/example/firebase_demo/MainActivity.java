@@ -36,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<Place> gridData;
 
     ListView lvPlace;
-    GridView gvPlace;
 
     ListViewAdapter lvAdapter;
     GridViewAdapter gvAdapter;
@@ -49,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         init();
+        configView();
         getData();
         tranfersActivity();
     }
@@ -57,10 +57,8 @@ public class MainActivity extends AppCompatActivity {
         imgInterested = findViewById(R.id.img_interested);
         tvInterested = findViewById(R.id.tv_interested);
         listData = new ArrayList<>();
-        gridData = new ArrayList<>();
 
         lvPlace = findViewById(R.id.lv_place);
-        gvPlace = findViewById(R.id.gv_place);
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
     }
@@ -72,11 +70,13 @@ public class MainActivity extends AppCompatActivity {
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                 Place place = dataSnapshot.getValue(Place.class);
                 listData.add(place);
-                gridData.add(place);
+
+                lvAdapter.notifyDataSetChanged();
+                // bắt sự thay đổi từ listData sau đó cập nhật lại listview
                 if(s != null) {
                     filterData();
                     setData();
-                    configView();
+
                 }
                 mainImageClick();
 
@@ -106,7 +106,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     void filterData() {
-
         Collections.reverse(listData);
     }
 
@@ -120,13 +119,10 @@ public class MainActivity extends AppCompatActivity {
         lvAdapter = new ListViewAdapter(listData, MainActivity.this, R.layout.place_item_layout);
         lvPlace.setAdapter(lvAdapter);
 
-        gvAdapter = new GridViewAdapter(gridData, MainActivity.this, R.layout.place_grid_layout);
-        gvPlace.setAdapter(gvAdapter);
     }
 
     void tranfersActivity() {
         listViewClick();
-        gridViewClick();
     }
 
     void listViewClick() {
@@ -141,17 +137,6 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    void gridViewClick() {
-        gvPlace.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent(MainActivity.this, ViewDetail.class);
-                Place place = gridData.get(i);
-                intent.putExtra("data", place);
-                startActivity(intent);
-            }
-        });
-    }
 
     void mainImageClick() {
         imgInterested.setOnClickListener(new View.OnClickListener() {

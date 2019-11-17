@@ -4,17 +4,19 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
 public class ViewDetail extends AppCompatActivity {
-    TextView tvTitle,tvAddress, tvDate, tvBus, tvHotel, tvMorePlace, tvFood, tvDetail;
+    TextView tvTitle,tvAddress, tvDate, tvBus, tvHotel, tvMorePlace, tvFood, tvDetail, tvPhone;
     ImageView imgDetail;
 
     @Override
@@ -24,6 +26,7 @@ public class ViewDetail extends AppCompatActivity {
 
         init();
         prepareData();
+        callAction();
     }
 
     void init() {
@@ -35,7 +38,9 @@ public class ViewDetail extends AppCompatActivity {
         tvMorePlace = findViewById(R.id.tv_more_detail);
         tvFood = findViewById(R.id.tv_food_detail);
         tvDetail = findViewById(R.id.tv_des_detail);
+        tvPhone = findViewById(R.id.tv_phone_detail);
         imgDetail = findViewById(R.id.img_view_detail);
+
     }
 
     void prepareData() {
@@ -51,6 +56,19 @@ public class ViewDetail extends AppCompatActivity {
         tvMorePlace.setText(place.morePlace);
         tvFood.setText(place.food);
         tvDetail.setText(place.detail);
+        tvPhone.setText(place.phone);
+    }
+
+    void callAction() {
+        tvPhone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_CALL);
+                intent.setData(Uri.parse("tel:" + tvPhone.getText().toString()));
+                startActivity(intent);
+            }
+        });
     }
 
     @Override

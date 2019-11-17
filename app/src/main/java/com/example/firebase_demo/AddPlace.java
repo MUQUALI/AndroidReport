@@ -42,7 +42,7 @@ import java.util.Date;
 
 public class AddPlace extends AppCompatActivity {
     ImageView imgPlace;
-    EditText edtPlaceName, edtTitle, edtAddress, edtBus, edtHotel, edtMorePlace, edtFood;
+    EditText edtPlaceName, edtTitle, edtAddress, edtBus, edtHotel, edtMorePlace, edtFood, edtPhone;
     Date dtPostDate;
     MultiAutoCompleteTextView edtDetail;
     Button btnPost;
@@ -51,7 +51,7 @@ public class AddPlace extends AppCompatActivity {
     FirebaseStorage storage = FirebaseStorage.getInstance("gs://androidbtl-b3b5d.appspot.com");
     StorageReference storageRef;
 
-    String placeName, title, address, postDate, bus, hotel, morePlace, food, detail;
+    String placeName, title, address, bus, hotel, morePlace, food, detail, phone;
     private static final int PICK_IMAGE = 1;
     private String IMAGE_URL = "";
 
@@ -80,6 +80,7 @@ public class AddPlace extends AppCompatActivity {
         edtMorePlace = findViewById(R.id.edt_more_place);
         edtFood = findViewById(R.id.edt_food);
         edtDetail = findViewById(R.id.area_detail);
+        edtPhone = findViewById(R.id.edt_phone);
 
         btnPost = findViewById(R.id.btn_post);
     }
@@ -114,8 +115,9 @@ public class AddPlace extends AppCompatActivity {
         food = edtFood.getText().toString();
         morePlace = edtMorePlace.getText().toString();
         detail = edtDetail.getText().toString();
+        phone = edtPhone.getText().toString();
 
-        Place place = new Place(placeName, title, dtPostDate, address, bus, hotel, morePlace, food, detail, IMAGE_URL);
+        Place place = new Place(placeName, title, dtPostDate, address, bus, hotel, phone, morePlace, food, detail, IMAGE_URL);
 
         mDatabase.child("places").push().setValue(place, new DatabaseReference.CompletionListener() {
             @Override

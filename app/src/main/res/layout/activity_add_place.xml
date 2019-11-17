@@ -56,6 +56,15 @@
             android:hint="Địa Điểm Nghỉ Ngơi" />
 
         <EditText
+            android:id="@+id/edt_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginRight="15dp"
+            android:hint="Số Điện Thoại Liên Hệ" />
+
+        <EditText
             android:id="@+id/edt_more_place"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

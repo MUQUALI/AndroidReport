@@ -10,6 +10,7 @@ public class Place implements Serializable {
     String address;
     String bus;
     String hotel;
+    String phone;
     String morePlace;
     String food;
     String detail;
@@ -17,6 +18,14 @@ public class Place implements Serializable {
 
     public String getName() {
         return name;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public void setName(String name) {
@@ -100,7 +109,7 @@ public class Place implements Serializable {
     }
 
     public Place(String name, String title, Date postDate, String address,
-                 String bus, String hotel, String morePlace, String food,
+                 String bus, String hotel, String phone, String morePlace, String food,
                  String detail, String imageUrl) {
         this.name = name;
         this.title = title;
@@ -108,6 +117,7 @@ public class Place implements Serializable {
         this.address = address;
         this.bus = bus;
         this.hotel = hotel;
+        this.phone = phone;
         this.morePlace = morePlace;
         this.food = food;
         this.detail = detail;
